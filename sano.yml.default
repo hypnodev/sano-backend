@@ -1,0 +1,16 @@
+app:
+  port: 8080
+  database:
+    url: mongodb+srv://mongo@localhost/?retryWrites=true
+
+healthCheck:
+  cron: "@hourly"
+
+services:
+  - name: backend
+    displayName: Google
+    url: https://google.com
+    cron: 0 */2 * * *
+
+  - name: frontend
+    url: http://localhost:8080
